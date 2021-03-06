@@ -1,69 +1,81 @@
-"use strict";
+// 1.
+var array = ["РџСЂРёРІРµС‚,", "РјРёСЂ", "!"];
 
-var i;
-for (i = 0; i < 10; i++) {
-  if(i%2 == 0){
-    console.log("fiz");
-  }else if (i%3 == 0) {
-    console.log("fizbuz");
-  }else {
-    console.log("buz");
-  }
-}  
+var helloWorld = "";
+for (let i=0; i < array.length; i++) {
+    helloWorld += array[i];
+}
 
+console.log(helloWorld);
 
-var available = 500;
-var minimal = 1200;
+// 2.
+var language = prompt("Р’РІРµРґРёС‚Рµ СЏР·С‹Рє (ru/en): ");
+var arrayRu = ["РїРѕРЅРµРґiР»РѕРє", "РІiРІС‚РѕСЂРѕРє", "СЃРµСЂРµРґР°", "С‡РµС‚РІРµСЂРі", "Рї'СЏС‚РЅРёС†СЏ", "СЃСѓР±РѕС‚Р°", "РЅРµРґiР»СЏ"];
+var arrayEn = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+var array = [];
 
-var request = minimal * 8;
+if (language == "ru") {
+    array = array.concat(arrayRu);
+} else if (language == "en") {
+    array = array.concat(arrayEn);
+}
 
-var total = Math.round( request/available+1 );
-console.log( total );
+console.log(String(array));
 
+array = [];
+switch (language) {
+    case "ru":
+        array = array.concat(arrayRu);
+        break;
+    case "en":
+        array = array.concat(arrayEn);
+        break;
+}
 
-var seconds = 6000;
-var hoursround = Math.floor ( seconds / 3600 );
-var hoursabove = seconds % 3600;
-var minutesround = Math.floor ( hoursabove / 60 );
-var seconds = Math.floor ( hoursabove % 60 );
-var hs = 'РіРѕРґРёРЅ';
-var hv = 'С…РІРёР»РёРЅ';
-var sek ='СЃРµРєСѓРЅРґ';
-console.log( hoursround, hs, minutesround, hv, seconds, sek );
+console.log(String(array));
 
-var seconds = 25781452;
-var hoursround = Math.floor ( seconds / 3600 );
-var hoursabove = seconds % 3600;
-var minutesround = Math.round ( hoursabove / 60 );
-var seconds = Math.round ( hoursabove % 60 );
-var hs = 'РіРѕРґРёРЅ';
-var hv = 'С…РІРёР»РёРЅ';
-var sek ='СЃРµРєСѓРЅРґ';
-console.log( hoursround, hs, minutesround, hv, seconds, sek );
+var arr = [
+    ['arrayRu', 'arrayEn'],
+]
 
-var seconds = 47624796224896;
-var hoursround = Math.floor ( seconds / 3600 );
-var hoursabove = seconds % 3600;
-var minutesround = Math.round ( hoursabove / 60 );
-var seconds = Math.round ( hoursabove % 60 );
-var hs = 'РіРѕРґРёРЅ';
-var hv = 'С…РІРёР»РёРЅ';
-var sek ='СЃРµРєСѓРЅРґ';
-console.log( hoursround, hs, minutesround, hv, seconds, sek );
+if (language == "ru") {
+    console.log(String(arr[0][0]));
+} else if (language == "en") {
+    console.log(String(arr[0][1]));
+}
 
-var seconds = 4568;
-var hoursround = Math.floor ( seconds / 3600 );
-var hoursabove = seconds % 3600;
-var minutesround = Math.floor ( hoursabove / 60 );
-var seconds = Math.floor ( hoursabove % 60 );
-var hs = 'РіРѕРґРёРЅ';
-var hv = 'С…РІРёР»РёРЅ';
-var sek ='СЃРµРєСѓРЅРґ';
-console.log( hoursround, hs, minutesround, hv, seconds, sek );
+      (language == "ru") ? console.log(arr[0][0]): 
+      (language == "en") ? console.log(arr[0][1]);
+      
 
+// 3.
 
+var floor = +prompt("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌС‚Р°Р¶РµР№ РІ РґРѕРјРµ");
+var entrance = +prompt("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРґСЉРµР·РґРѕРІ РІ РґРѕРјРµ");
+var numberOfApartments = +prompt("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РєРІР°СЂС‚РёСЂ РЅР° СЌС‚Р°Р¶Рµ");
+var apartment = +prompt("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РєРІР°СЂС‚РёСЂС‹");
+ 
+var findApartment = function(){
+    var apartmentsInEntrance = floor * numberOfApartments;
+    
+    var findEntrance = Math.floor(apartment / apartmentsInEntrance + 1);
+    
+    var findFloor;
 
+    if (apartment > apartmentsInEntrance) {
+        findFloor = Math.floor((apartment / numberOfApartments) / floor + 1);
+    } else if (apartment <= apartmentsInEntrance && apartment > numberOfApartments) {
+        findFloor = Math.floor(apartment / numberOfApartments + 1);
+    } else if (apartment <= apartmentsInEntrance && apartment <= numberOfApartments) {
+        findFloor = Math.floor(apartment / numberOfApartments);
+    }
+    
 
-var arr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-var month = new Date().getMonth();
-console.log(arr[month]);
+    if(apartment > 0 && findFloor !== "NaN" && findFloor > 0 && findEntrance !== "NaN" && findEntrance > 0) {
+        console.log(`РљРІР°СЂС‚РёСЂР° в„–"${apartment} РЅР°С…РѕРґРёС‚СЃСЏ РЅР° ${findFloor} СЌС‚Р°Р¶Рµ ${findEntrance} РїРѕРґСЉРµР·РґР°`);
+    } else {
+        console.log("Р’С‹ РІРІРµР»Рё РЅРµРґРѕРїСѓСЃС‚РёРјРѕРµ Р·РЅР°С‡РµРЅРёРµ");
+    }
+};
+
+findApartment();
