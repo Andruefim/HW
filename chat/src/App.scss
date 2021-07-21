@@ -1,0 +1,199 @@
+//
+
+$position-values: (
+    right: 17%,
+    20: 20%,
+);
+
+div {
+    border-radius: 7px;
+    // border: 1px solid red;
+}
+
+::-webkit-scrollbar {
+    width: 7px; /* width of the entire scrollbar */
+    background-color: grey;
+}
+
+// ul :nth-child(odd) {
+//     color: red;
+// }
+
+::-webkit-scrollbar-track {
+    box-shadow: grey;
+    -webkit-box-shadow: grey;
+    background-color: grey;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    // background: linear-gradient(#d1e7dd, #198754, #198754, #198754, #d1e7dd);
+    background: linear-gradient(#d1e7dd, #198754 20%, #198754 80%, #d1e7dd);
+}
+
+body {
+    // overflow: hidden;
+    // background: url("./images/romashki_1920x1080.jpg");
+}
+
+.mainWrapper {
+    min-width: 250px;
+}
+
+.header {
+    min-width: 250px;
+}
+
+.avatarka {
+    > img,
+    > div {
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+    }
+}
+//
+//
+//
+//
+//
+//
+//
+.pageMain_ChatMessages {
+    max-height: calc(100vh - 250px);
+    min-height: calc(100vh - 250px);
+}
+
+.maxWidthForSideBar {
+    max-width: 350px;
+    margin: auto;
+}
+
+.maxWidthPageMain {
+    max-width: 1300px;
+    margin: auto;
+}
+
+.maxWidthForMsg {
+    max-width: 800px;
+    margin: auto;
+}
+
+.MessagesList {
+    max-height: calc(100vh - 330px);
+    min-height: calc(100vh - 330px);
+    overflow: auto;
+}
+
+.MessageInput {
+    max-height: 110px;
+    min-height: 110px;
+    background-color: grey;
+}
+
+.fonRomaska {
+    background: url("./images/romashki_1920x1080.jpg");
+}
+
+.messageItem {
+    // width: 75%;
+    width: calc(100% - 120px);
+}
+
+.LoginForm {
+    background-color: lightgreen;
+}
+
+.chatItem {
+    min-height: 70px;
+}
+
+.gradient {
+    background-image: var(--bs-gradient);
+}
+
+.noUnderLine {
+    text-decoration: none;
+}
+
+.ChatsList {
+    max-height: calc(100vh - 220px);
+    min-height: calc(100vh - 220px);
+    overflow: auto;
+
+    img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+.AllUsersList {
+    max-height: calc(100vh - 215px);
+    min-height: calc(100vh - 215px);
+    overflow: auto;
+}
+
+.messagesArea {
+    max-height: calc(100vh - 20px);
+    background-color: red;
+}
+
+.ChatDashBoard {
+    min-height: calc(100vh - 110px);
+    padding: 10px 20px;
+    table td:first-child {
+        white-space: nowrap;
+        text-align: end;
+        padding-right: 10px;
+    }
+}
+
+.ModalUserDashboard {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+}
+
+.MediaItem {
+    img {
+        max-width: 150px;
+        max-height: 150px;
+    }
+}
+
+.modalImg {
+    width: 470px;
+    height: 470px;
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+.modalImgSend {
+    width: 470px;
+    height: 470px;
+
+    > div {
+        width: 300px;
+        height: 300px;
+        margin: 2px;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        margin: 2px;
+    }
+}
+
+@import "/node_modules/bootstrap/scss/bootstrap";
+@import "./login.scss";
+// @media (prefers-reduced-motion: reduce);
+
+* {
+    transition: all 0.2s linear;
+}
+
+#root {
+    background: url("./images/romashki_1920x1080.jpg");
+}
